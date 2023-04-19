@@ -1,0 +1,23 @@
+<mvc:View xmlns:layout="sap.ui.layout" 
+          controllerName="teamwork.net.fioridemo.controller.Main"
+          xmlns:mvc="sap.ui.core.mvc" 
+          displayBlock="true"
+          xmlns="sap.m">
+    <!-- <Page id="page" title="{i18n>title}">
+        <content />
+    </Page> -->
+    <Shell>
+        <App class = "myAppDemo">
+            <pages>
+                <Page title="{trans>homePageTitle}" 
+                      titleAlignment = "Center" >
+                    <content>
+                        <mvc:XMLView viewName="teamwork.net.fioridemo.view.HelloPanel"/>
+                        <mvc:XMLView viewName="teamwork.net.fioridemo.view.InvoiceList"/>
+                  </content>
+                </Page>
+            </pages>
+        </App>    
+    </Shell>
+            press=".onShowHello" />
+</mvc:View>

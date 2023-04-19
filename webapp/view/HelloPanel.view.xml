@@ -1,0 +1,29 @@
+<mvc:View xmlns:layout="sap.ui.layout" 
+          controllerName="teamwork.net.fioridemo.controller.HelloPanel"
+          xmlns:mvc="sap.ui.core.mvc" 
+          xmlns="sap.m">
+    <Panel
+        headerText="{trans>helloPanelTitle}"
+        class="sapUiResponsiveMargin"
+        width="auto">
+        <content>
+            <Button 
+                text = "{trans>openDialogButton}"
+                icon="sap-icon://world" 
+                press=".onOpenDialog"
+            />
+            <Button
+                text="{trans>showHelloButtonText}"
+                press=".onShowHello"
+                class="myCustomButton"/>                        
+            <Input
+                binding = "{viewModel>/employee}"
+                value="{viewModel>name}"
+                valueLiveUpdate="true"
+                width="60%"/>                              
+            <FormattedText
+                htmlText="Name {viewModel>/employee/name}"
+                class="sapUiTinyMargin sapThemeHighlight-asColor myCustomText"/>
+        </content>
+    </Panel>
+</mvc:View>

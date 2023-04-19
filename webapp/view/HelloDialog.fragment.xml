@@ -1,0 +1,20 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core" >
+    <Dialog 
+        id="helloDialog"
+        title="Name: {viewModel>/employee/name}">
+        <content>
+            <core:Icon
+                src="sap-icon://account"
+                size="8rem"
+                class="sapUiMediumMargin"/>
+        </content>        
+        <beginButton>
+            <Button
+                text="{trans>dialogCloseButton}"
+                press=".onCloseDialog"/>        
+        </beginButton>
+
+    </Dialog>
+</core:FragmentDefinition>
