@@ -48,12 +48,19 @@ sap.ui.define([
             console.log(sNumber)
             console.log(sNumberUnit)
             var oRouter = this.getOwnerComponent().getRouter();
-			oRouter.navTo("RouteDetail");
             // Do something with the selected object data
           },
           onItemPress: function(oEvent) {
-            console.log(oEvent.getSource());
-            // Do something with the selected object data
+            let oListItem = oEvent.getSource();
+            let oBindingContext = oListItem.getBindingContext("invoice");
+            
+            //Nav to Detail
+            var oRouter = this.getOwnerComponent().getRouter();
+            let path = window.encodeURIComponent(oBindingContext.getPath().substr(1));
+            console.log(path);
+            oRouter.navTo("RouteDetail", {
+                invoicePath: path
+            });            
           }           
 	});
 });

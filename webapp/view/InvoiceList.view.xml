@@ -4,11 +4,9 @@
     xmlns:mvc="sap.ui.core.mvc">
     <List
         id="invoiceList"
-        mode= "SingleSelect"
         headerText="{i18n>invoiceListTitle}"
         class="sapUiResponsiveMargin"
         width="auto"
-        itemPress="onItemPress"
         items="{
             path: 'invoice>/Invoices',
             sorter: [{
@@ -40,8 +38,9 @@
                     }                    
                 }"
                 numberUnit="{view>/currency}"
-                numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error': 'Success' }" 
-                type="Navigation">
+                numberState="{= ${invoice>ExtendedPrice} > 500 ? 'Error': 'Success' }" 
+                type="Navigation"
+                press="onItemPress">
                 <firstStatus>
                     <ObjectStatus
                         text="{
